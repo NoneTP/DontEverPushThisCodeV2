@@ -146,6 +146,15 @@ Add in repo → Settings → Secrets and variables → Actions:
 | `SONAR_TOKEN` | https://sonarcloud.io → My Account → Security |
 | `GITHUB_TOKEN` | Auto-provided by GitHub Actions — no setup needed |
 
+For SonarCloud, also add these repository **variables** under Settings → Secrets and variables → Actions → Variables:
+
+| Variable | Value |
+|----------|-------|
+| `SONAR_ORGANIZATION` | Your SonarCloud organization key |
+| `SONAR_PROJECT_KEY` | The project key from your SonarCloud project |
+
+The workflow passes these keys directly to the scanner, so no `sonar-project.properties` file is needed. See the [SonarQube scan action setup](https://github.com/SonarSource/sonarqube-scan-action/tree/v7.1.0#for-sonarqube-cloud).
+
 ---
 
 ## Security Notice
