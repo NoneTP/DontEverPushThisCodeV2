@@ -98,10 +98,10 @@ jobs:
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                   SONAR_HOST_URL: https://sonarcloud.io
               with:
-                # Set these repository variables to the keys from your SonarCloud project.
+                # Accept SonarCloud keys stored as repository variables or secrets.
                 args: >-
-                  -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
-                  -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+                  -Dsonar.organization=${{ vars.SONAR_ORGANIZATION || secrets.SONAR_ORGANIZATION }}
+                  -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY || secrets.SONAR_PROJECT_KEY }}
                   -Dsonar.sources=app,components,lib,pages
 
     # GATE#1b: SAST via CodeQL (results in GitHub Security tab)

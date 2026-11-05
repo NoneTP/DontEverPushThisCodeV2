@@ -153,6 +153,8 @@ For SonarCloud, also add these repository **variables** under Settings → Secre
 | `SONAR_ORGANIZATION` | Your SonarCloud organization key |
 | `SONAR_PROJECT_KEY` | The project key from your SonarCloud project |
 
+These two keys can also be stored as repository secrets. The workflow accepts either location, with variables taking precedence.
+
 The workflow passes these keys directly to the scanner, so no `sonar-project.properties` file is needed. See the [SonarQube scan action setup](https://github.com/SonarSource/sonarqube-scan-action/tree/v7.1.0#for-sonarqube-cloud).
 
 ---
